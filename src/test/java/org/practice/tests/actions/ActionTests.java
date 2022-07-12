@@ -1,4 +1,4 @@
-package org.random.tests.actions;
+package org.practice.tests.actions;
 
 import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.Test;

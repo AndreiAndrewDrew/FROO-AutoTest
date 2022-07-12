@@ -1,4 +1,4 @@
-package org.random.tests;
+package org.practice.tests.randoms;
 
 import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterAll;
