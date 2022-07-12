@@ -1,6 +1,5 @@
 package org.practice.tests.waits;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -39,21 +37,22 @@ public class DataTablesTests {
 
     assertEquals(tableRows.size(), 10);
 
-
     Select select = new Select(driver.findElement(By.name("example_length")));
     select.selectByValue("50");
-/*
+
+/* implicit
     try {
       Thread.sleep(5000);
     } catch (InterruptedException e) {
       Thread.interrupted();
     }
-*/
-//    tableRows = tableExamples.findElements(By.cssSelector("tbody > tr "));
 
-    tableRows = new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofSeconds(1))
+    tableRows = tableExamples.findElements(By.cssSelector("tbody > tr "));
+*/
+
+    tableRows = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(1))
             .until(ExpectedConditions
-                    .numberOfElementsToBe(By.cssSelector("#example tbody > tr "),50));
+                    .numberOfElementsToBe(By.cssSelector("#example tbody > tr "), 50));
 
     assertEquals(tableRows.size(), 50);
 
