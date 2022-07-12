@@ -18,7 +18,7 @@ public class ActionTests {
 
   @Test
   public void dragAndDropTest(){
-    System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "libs/chrome/chromedriver.exe");
     WebDriver driver = new ChromeDriver();
     driver.get("https://demo.guru99.com/test/drag_drop.html");
 

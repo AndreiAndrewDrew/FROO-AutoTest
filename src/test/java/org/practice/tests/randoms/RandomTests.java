@@ -23,7 +23,7 @@ public class RandomTests {
   @Test
   void randomNumbersAreNotRepeatedTest() {
 
-    System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "libs/chrome/chromedriver.exe");
     driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 

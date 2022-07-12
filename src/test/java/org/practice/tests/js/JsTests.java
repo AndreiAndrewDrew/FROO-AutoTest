@@ -11,7 +11,7 @@ public class JsTests {
   @Test
   public void jsTest() {
 
-    System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "libs/chrome/chromedriver.exe");
     WebDriver driver = new ChromeDriver();
     driver.get("https://yahoo.com");
 

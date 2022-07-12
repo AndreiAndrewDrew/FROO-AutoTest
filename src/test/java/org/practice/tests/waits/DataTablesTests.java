@@ -12,18 +12,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataTablesTests {
   @Test
   public void implicitlyWaitTest() {
-    System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "libs/chrome/chromedriver.exe");
 
+    //regimul Headless(fara ca sa se incarece interfata grafica chrome)
     ChromeOptions options = new ChromeOptions();
     options.setHeadless(true);
-
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new ChromeDriver(options);
 
     driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 
