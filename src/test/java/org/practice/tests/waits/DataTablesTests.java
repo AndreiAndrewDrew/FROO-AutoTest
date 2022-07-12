@@ -7,8 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -38,16 +41,21 @@ public class DataTablesTests {
 
 
     Select select = new Select(driver.findElement(By.name("example_length")));
-    select.selectByValue("25");
-
+    select.selectByValue("50");
+/*
     try {
       Thread.sleep(5000);
     } catch (InterruptedException e) {
       Thread.interrupted();
     }
+*/
+//    tableRows = tableExamples.findElements(By.cssSelector("tbody > tr "));
 
-    tableRows = tableExamples.findElements(By.cssSelector("tbody > tr "));
-    assertEquals(tableRows.size(), 25);
+    tableRows = new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofSeconds(1))
+            .until(ExpectedConditions
+                    .numberOfElementsToBe(By.cssSelector("#example tbody > tr "),50));
+
+    assertEquals(tableRows.size(), 50);
 
   }
 }
