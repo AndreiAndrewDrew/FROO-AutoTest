@@ -54,6 +54,5 @@ public class DataTablesTests {
                     .numberOfElementsToBe(By.cssSelector("#example tbody > tr "), 50));
 
     assertEquals(tableRows.size(), 50);
-
   }
 }
